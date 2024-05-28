@@ -17,8 +17,7 @@ async function apiFetch() {
         construirLista(dado);
     }
 }
-
-document.getElementById('botaoSalvar').addEventListener("click", function() {
+    document.getElementById('botaoSalvar').addEventListener("click", function() {
     const enderecoAtual = document.querySelector('.tableinfo');
     if (enderecoAtual) {
         const endereco = {
@@ -32,7 +31,7 @@ document.getElementById('botaoSalvar').addEventListener("click", function() {
     }
 });
 
-function construirLista(dado) {
+    function construirLista(dado) {
     const divContainer = document.getElementById('tableinfo');
     divContainer.innerHTML = '';
 
@@ -48,21 +47,21 @@ function construirLista(dado) {
     divContainer.appendChild(dadosEnd);
 }
 
-function salvarEndereco(endereco) {
+    function salvarEndereco(endereco) {
     let enderecos = JSON.parse(localStorage.getItem("enderecosSalvos")) || [];
     enderecos.push(endereco);
     localStorage.setItem("enderecosSalvos", JSON.stringify(enderecos));
     adcEnderecoDOM(endereco);
 }
 
-function carregarEnderecos() {
+    function carregarEnderecos() {
     let enderecos = JSON.parse(localStorage.getItem("enderecosSalvos")) || [];
     enderecos.forEach(endereco => {
         adcEnderecoDOM(endereco);
     });
 }
 
-function adcEnderecoDOM(endereco) {
+    function adcEnderecoDOM(endereco) {
     const divContainer = document.getElementById('enderecosSalvos');
     const dadosEnd = document.createElement('div');
     dadosEnd.classList.add('saved-address');
@@ -77,14 +76,14 @@ function adcEnderecoDOM(endereco) {
     divContainer.appendChild(dadosEnd);
 }
 
-function deletarEndereco(cep) {
+    function deletarEndereco(cep) {
     let enderecos = JSON.parse(localStorage.getItem("enderecosSalvos")) || [];
     enderecos = enderecos.filter(endereco => endereco.cep !== cep);
     localStorage.setItem("enderecosSalvos", JSON.stringify(enderecos));
     atualizarDOM();
 }
 
-function atualizarDOM() {
+    function atualizarDOM() {
     const divContainer = document.getElementById('enderecosSalvos');
     divContainer.innerHTML = '<h3>Endereços Salvos:</h3>';
     carregarEnderecos();
