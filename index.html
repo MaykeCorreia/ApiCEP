@@ -10,15 +10,20 @@
     <h1>Consulta de Endereço</h1>
     <div id="div_consulta_cep">
         <form>
-        <label for="input_consulta_cep">Digite seu CEP:</label>
-        <input type="text" id="input_consulta_cep">
-        <button type="button" onclick="apiFetch()">Buscar</button>
+            <label for="input_consulta_cep">Digite seu CEP:</label>
+            <input type="text" id="input_consulta_cep">
+            <button type="button" onclick="apiFetch()">Buscar</button>
         </form>
     </div>
     <h3>Dados da consulta:</h3>
-    <div id="tableinfo">
+    <div id="tableinfo"></div>
+    
+    <button id="botaoSalvar">Salvar</button>
 
+    <div class="enderecosSalvos" id="enderecosSalvos">
+        <h3>Endereços Salvos:</h3>
     </div>
+
+    <script src="assets/js/script.js"></script>
 </body>
-<script src="assets/js/script.js"></script>
 </html>
